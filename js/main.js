@@ -59,7 +59,6 @@ let mGameRendrer = (data = {}, mDOM) => {
 
                             };
                             mSet(mScr);
-
                         }
                     },
 
@@ -91,8 +90,6 @@ let mGameRendrer = (data = {}, mDOM) => {
 
                             };
                             mSet(mScr);
-
-
                         }
                     },
 
@@ -124,12 +121,8 @@ let mGameRendrer = (data = {}, mDOM) => {
 
                             };
                             mSet(mScr);
-
-
                         }
                     },
-
-
 
 
                 ]
