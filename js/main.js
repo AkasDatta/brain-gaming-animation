@@ -1,4 +1,4 @@
-let mGameRendrer = (data = {}, mDOM) => {
+let mGameRenderer = (data = {}, mDOM) => {
     //create element..    
     let mDiv = document.createElement("div");
     mDOM.appendChild(mDiv);
@@ -37,29 +37,34 @@ let mGameRendrer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             //--reset--// [START]
-                            v["e"].innerHTML = `<h1>amar name akash</h1>`; //reset
+
+                            v["el"].innerHTML = ``; //reset
+
                             //--reset--// [END]
 
                             //set..
                             let mScr = document.createElement("div");
-                            v["e"].appendChild(mScr);
-                            //set..
-                            //mScr.innerHTML = thisItem["name"];
+                            v["el"].appendChild(mScr);
 
                             //set..
                             let mSet = (mE = document.body) => { //**Have to understand it from sir**
-                                // console.log(mE);
                                 //do your code..
-                                mE.innerHTML = thisItem["name"];
+                                mE.innerHTML = `
+                                    <div class="scr scr1 scr-transition">
+                                        <img src="../assets/1.svg" alt="">
+                                    </div>
+                                
+                                `;
 
-                                //set..
-                                mE.style.width = "100%";
-                                mE.style.height = "100vh";
-                                mE.style.backgroundColor = "green";
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr1');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+                                    }
+                                }, 0); 
 
                             };
                             mSet(mScr);
-
                         }
                     },
 
@@ -69,30 +74,33 @@ let mGameRendrer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             //--reset--// [START]
-                            v["e"].innerHTML = ``; //reset
+                            v["el"].innerHTML = ``; //reset
                             //--reset--// [END]
 
                             //set..
                             let mScr = document.createElement("div");
-                            v["e"].appendChild(mScr);
-                            //set..
-                            //mScr.innerHTML = thisItem["name"];
+                            v["el"].appendChild(mScr);
 
 
                             //set..
                             let mSet = (mE = document.body) => {
                                 //do your code..
-                                mE.innerHTML = thisItem["name"];
-
-                                //set..
-                                mE.style.width = "100%";
-                                mE.style.height = "100vh";
-                                mE.style.backgroundColor = "blue";
+                                mE.innerHTML = `
+                                <div class="scr2 scr-transition">
+                                    <img src="../assets/2.svg" alt="">
+                                </div>
+                                
+                                `;
+                                
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr2');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+                                    }
+                                }, 0);
 
                             };
                             mSet(mScr);
-
-
                         }
                     },
 
@@ -102,34 +110,35 @@ let mGameRendrer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             //--reset--// [START]
-                            v["e"].innerHTML = ``; //reset
+                            v["el"].innerHTML = ``; //reset
                             //--reset--// [END]
 
                             //set..
                             let mScr = document.createElement("div");
-                            v["e"].appendChild(mScr);
-                            //set..
-                            //mScr.innerHTML = thisItem["name"];
+                            v["el"].appendChild(mScr);
 
 
                             //set..
                             let mSet = (mE = document.body) => {
                                 //do your code..
-                                mE.innerHTML = thisItem["name"];
+                                mE.innerHTML = `
+                                <div class="scr3 scr-transition">
+                                    <img src="../assets/rotate_90.svg" alt="">
+                                </div>
+                                
+                                `;
 
-                                //set..
-                                mE.style.width = "100%";
-                                mE.style.height = "100vh";
-                                mE.style.backgroundColor = "yellow";
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr3');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+                                    }
+                                }, 0);
 
                             };
                             mSet(mScr);
-
-
                         }
                     },
-
-
 
 
                 ]
@@ -138,14 +147,13 @@ let mGameRendrer = (data = {}, mDOM) => {
             //set..
             "set": (k, v) => {
                 let mList = mDta_main["screens"]["rndr"]["l"];
-                let mIdx = mList.findIndex(eF => eF["key"] === k);
+                let mIdx = mList.findIndex(eF => eF["key"] === k); // Index number of the screen list
                 if (mIdx == -1) {
-                    throw `err: [k = ${k}] is not avail..`;
+                    throw `err: [k = ${k}] is not available..`;
                     return; //Stop
                 }
                 //all ok..
                 mList[mIdx].set(k, v, mList[mIdx]);
-
             }
 
         }
@@ -154,24 +162,24 @@ let mGameRendrer = (data = {}, mDOM) => {
 
     //set..
     mDiv.innerHTML = "Content";
-    //let my_elem_1 = mUtils.my_elem_1(mDiv);
+    // let my_elem_1 = mUtils.my_elem_1(mDiv);
 
 
 
     //mStart..
-    let mStart = (mE) => {
+    let mStart = (mE) => {        //mE is mDiv
         //set..
         mDta_main.screens.set("scr_1", {
-            "e": mE,
+            "el": mE,
             "value": {
                 //here you can assign your variable based on your requirements..
-
+                "test": "myself anik"
             }
         });
 
         setTimeout(() => {
             mDta_main.screens.set("scr_2", {
-                "e": mE,
+                "el": mE,
                 "value": {
                     //here you can assign your variable based on your requirements..
 
@@ -182,7 +190,7 @@ let mGameRendrer = (data = {}, mDOM) => {
 
         setTimeout(() => {
             mDta_main.screens.set("scr_3", {
-                "e": mE,
+                "el": mE,
                 "value": {
                     //here you can assign your variable based on your requirements..
 
@@ -198,7 +206,7 @@ let mGameRendrer = (data = {}, mDOM) => {
 
 };
 
-mGameRendrer({
+mGameRenderer({
     "meta": {},
     "data": {
         //add params based on content requirement
