@@ -37,7 +37,7 @@ let mGameRendrer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             //--reset--// [START]
-                            v["e"].innerHTML = ``; //reset
+                            v["e"].innerHTML = `<h1>amar name akash</h1>`; //reset
                             //--reset--// [END]
 
                             //set..
