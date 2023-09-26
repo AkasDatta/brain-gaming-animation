@@ -49,7 +49,8 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 mE.innerHTML = `
                                     <div class="scr1 scr-transition">
                                         <img class="scr1-img" src="../assets/1.svg" alt="">
-                                        <-- <img class="scr1-img2" src="../assets/English_Mastery_Quest.svg" alt=""> -->
+
+                                        <!-- <img class="scr1-img2" src="../assets/English_Mastery_Quest.svg" alt=""> --!>
                                     </div>
                                 `;
 
@@ -75,6 +76,7 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
                             v["el"].appendChild(mScr);
 
 
@@ -109,15 +111,16 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
                             v["el"].appendChild(mScr);
 
                             //set..
                             let mSet = (mE = document.body) => {
                                 mE.innerHTML = `
                                 <div class="scr3 scr-transition scr3-bg-img">
-                                   <img class="scr3-img1 mainImage" src="../assets/rotate_90.svg" alt="">
+                                   <img class="scr3-img1" src="../assets/rotate_90.svg" alt="">
 
-                                    <img src="/assets/rotate_90_lesser.svg" alt="" class="scr3-img2 show-overlay overlay-image"> 
+                                    <img class="scr3-img2" src="/assets/rotate_90_lesser.svg" alt=""> 
 
                                     <div class="overlay-Loading">
                                         <div class="loading-spans">
@@ -154,24 +157,29 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                                             setTimeout(() => {
                                                 loadingBall.style.width = '100%';
-                                            }, 3000); 
+                                                zoomOutLoading();
+                                            }, 3000);
 
                                             // zoomOutLoading
-                                            setTimeout(() => {
+                                            const zoomOutLoading = () => {
                                                 overlayLoading.style.animation = 'zoomOutLoading 1s 3s both';
-                                            }, 3500);
+                                            }
                                         }
 
                                         // ZoomOut and hide img2
-                                        setTimeout(() =>{
+                                        setTimeout(() => {
                                             img2.style.animation = 'zoomOut2 2s 2s both';
-                                        }, 5000);
+                                        }, 5500);
 
-                                        setTimeout(() =>{
-                                            img1.style.transform = 'rotate(45deg)';
-                                        }, 6000);
+                                        setTimeout(() => {
+                                            if (img1) {
+                                                img1.style.animation = 'rotate1 2s 1s both';
+                                            }
+                                        }, 8000);
+
                                     }
                                 }, 0);
+
 
                             };
                             mSet(mScr);
@@ -188,14 +196,42 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
                             v["el"].appendChild(mScr);
 
 
                             //set..
                             let mSet = (mE = document.body) => {
                                 mE.innerHTML = `
-                                <div class="scr4 scr-transition">
-                                    <img class="scr4-img" src="../assets/rotate_90.svg" alt="">
+                                <div class="scr4 scr-transition scr4-bg-img">
+                                    <div class="img-container">
+                                        <img class="scr4-img1" src="../assets/rotate_90.svg" alt="rotate">
+                                    </div>
+                                    <div class="scr4-data scr4-data1-dis">
+                                        <h1 class="scr4-h1">Game Explanation</h1>
+                                        <div>
+                                            <h2 class="scr4-h2">countdown</h2>
+                                            <img class="scr4-img2" src="../assets/watch.svg" alt="watch">
+                                            <div class="scr4-nums">
+                                                <span>1</span>
+                                                <span>2</span>
+                                                <span>3</span>
+                                                <span>4</span>
+                                            </div>
+                                        </div>
+
+                                        <button onclick="scr4Data2Dis()" class="scr4-skip-btn">Skip</button>
+                                    </div>
+
+                                    <div class="scr4-data scr4-data2-dis">
+                                        <h1 class="scr4-h1">Game Explanation</h1>
+                                        <div>
+                                            <h2 class="scr4-h2">Answer The MCQ</h2>
+                                            <img class="scr4-img2" src="../assets/answer_list.svg" alt="list">
+                                        </div>
+                                        <button onclick="next" class="scr4-skip-btn">Skip</button>
+                                        
+                                    </div>
                                 </div>
                                 
                                 `;
@@ -204,40 +240,38 @@ let mGameRenderer = (data = {}, mDOM) => {
                                     const screenElement = mE.querySelector('.scr4');
                                     if (screenElement) {
                                         screenElement.style.opacity = 1;
-                                    }
-                                }, 0);
 
-                            };
-                            mSet(mScr);
-                        }
-                    },
-
-                    {
-                        "name": "Screen 5",
-                        "key": "scr_5",
-                        "set": (k, v, thisItem) => {
-                            console.log(thisItem);
-                            //--reset--// [START]
-                            v["el"].innerHTML = ``; //reset
-
-                            //set..
-                            let mScr = document.createElement("div");
-                            v["el"].appendChild(mScr);
+                                        // const scr4Data = screenElement.querySelector('.scr4-data');
+                                        // if (scr4Data) {
+                                        //     scr4Data.style.animation = 'scr4-zoomIn2 2s 2s both';
+                                        // }
 
 
-                            //set..
-                            let mSet = (mE = document.body) => {
-                                mE.innerHTML = `
-                                <div class="scr5 scr-transition">
-                                    <img class="scr5-img" src="../assets/rotate_90.svg" alt="">
-                                </div>
-                                
-                                `;
+                                        // Skip 
+                                        setTimeout(() => {
+                                            const scr4Data1 = mE.querySelector(".scr4-data1-dis");
+                                            const scr4Data2 = mE.querySelector(".scr4-data2-dis");
 
-                                setTimeout(() => {
-                                    const screenElement = mE.querySelector('.scr5');
-                                    if (screenElement) {
-                                        screenElement.style.opacity = 1;
+                                            // let scr4Data2Dis = () => {
+                                                scr4Data1.style.opacity = 0;
+                                                scr4Data2.style.opacity = 1;
+
+                                                setTimeout(() => {
+                                                    scr4Data2.style.opacity = 0;
+                                                    rotateTheImg1();
+                                                }, 2000);
+                                            // }
+                                            const scr4Img1 = mE.querySelector(".scr4-img1");
+                                            let rotateTheImg1 = () => {
+                                                if (scr4Img1) {
+                                                    scr4Img1.style.animation = 'scr4-rotate1 2s 1s both';
+                                                }
+                                            }
+
+                                        }, 4000);
+
+
+
                                     }
                                 }, 0);
 
@@ -304,6 +338,17 @@ let mGameRenderer = (data = {}, mDOM) => {
                 }
             });
         }, 3000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_4", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+
+                }
+            });
+        }, 14000);
 
 
     };
