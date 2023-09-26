@@ -1,107 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Document</title>
     <style>
-        body, html {
-            /* background: #3f043e; */
-            height: 100vh;
-            width: 100vw;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        img {
-            transition: transform 2s;
-
-        }
-
-        .mainImage:hover {
-            transform: scale(40);
-        }
-        .overlay-image:hover {
-            transform: scale(30);
-        }
-
-
-        .overlay-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 0;
-            z-index: 1;
-            height: 25px;
-            width: 25px;
-        }
-
-        .show-overlay {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .overlay-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-            z-index: 1;
-            color: white;
-            font-weight: bold;
-            border: whitesmoke;
-            border-radius: 78px;
-            background: #B074A9;
-            width: 260px;
-            height: 60px;
-            flex-shrink: 0;
-            font-size: larger;
-        }
-
-        .show-button {
-            display: block;
-        }
+        
     </style>
 </head>
+
 <body>
-    <div class="vector">
-        <img src="../assets/rotate_90.svg" alt="" id="mainImage" class="mainImage">
-        <img src="../assets/rotate_90_less_color.svg" alt="" class="overlay-image" id="overlayImage">
-        <button class="overlay-button">Loading</button>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainImage = document.getElementById('mainImage');
-            const overlayImage = document.getElementById('overlayImage');
-            const overlayButton = document.querySelector('.overlay-button');
-
-            mainImage.addEventListener('transitionend', function() {
-                overlayImage.classList.add('show-overlay');
-                mainImage.style.transform = "scale(40)";
-            });
-
-            overlayImage.addEventListener('transitionend', function() {
-                overlayButton.classList.add('show-button');
-            });
-        });
-
-    </script>
 </body>
+
 </html>
