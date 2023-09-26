@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brain gym</title>
+    <title>Document</title>
     <style>
         body, html {
             background: #3f043e;
@@ -32,11 +32,8 @@
             transform: scale(40);
         }
 
-        .overlay-image:hover {
-            transform: scale(30);
-        }
-
-        .overlay-image {
+        .overlay-image,
+        .overlay-image2 {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -45,28 +42,15 @@
             z-index: 1;
             transition: transform 2s;
         }
-
-        .show-overlay {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
+        .overlay-image2{
+            width: 550px;
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
-        .overlay-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-            z-index: 1;
-            color: white;
-            font-weight: bold;
-            border: whitesmoke;
-            border-radius: 78px;
-            background: #B074A9;
-            width: 260px;
-            height: 60px;
-            flex-shrink: 0;
-            font-size: larger;
+        .show-overlay {
+            transform: translate(-50%, -50%) scale(0.1);
+            opacity: 1;
         }
 
         .show-button {
@@ -77,18 +61,20 @@
 </head>
 <body>
     <img src="/assects/Vector.svg" alt="" id="mainImage" class="mainImage">
-    <img src="/assects/Vector.svg" alt="" class="overlay-image" id="overlayImage">
-    <button class="overlay-button">Loading</button>
+    <img src="/assects/Vector11.svg" alt="" class="overlay-image" id="overlayImage">
+    <img src="/assects/ready/Ready.svg" alt="" class="overlay-image overlay-image2" id="overlayImage2">
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mainImage = document.getElementById('mainImage');
             const overlayImage = document.getElementById('overlayImage');
-            const overlayButton = document.querySelector('.overlay-button');
+            const overlayImage2 = document.getElementById('overlayImage2');
 
             mainImage.addEventListener('transitionend', function() {
                 overlayImage.classList.add('show-overlay');
                 overlayImage.addEventListener('transitionend', function() {
-                    overlayButton.classList.add('show-button');
+                    overlayImage2.style.transform = "translate(-50%, -50%) scale(1)";
+                    overlayImage2.style.opacity = "1";
                 });
                 mainImage.style.transform = "scale(40)";
             });
@@ -100,7 +86,3 @@
     </script>
 </body>
 </html>
-
-
-
-
