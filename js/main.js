@@ -250,14 +250,27 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         setTimeout(() => {
                                             const scr4Data1 = mE.querySelector(".scr4-data1-dis");
                                             const scr4Data2 = mE.querySelector(".scr4-data2-dis");
+
                                             // let scr4Data2Dis = () => {
-                                                console.log("clicked");
                                                 scr4Data1.style.opacity = 0;
                                                 scr4Data2.style.opacity = 1;
-                                            // }
-                                        }, 5000);
 
-                                        
+                                                setTimeout(() => {
+                                                    scr4Data2.style.opacity = 0;
+                                                    rotateTheImg1();
+                                                }, 2000);
+                                            // }
+                                            const scr4Img1 = mE.querySelector(".scr4-img1");
+                                            let rotateTheImg1 = () => {
+                                                if (scr4Img1) {
+                                                    scr4Img1.style.animation = 'scr4-rotate1 2s 1s both';
+                                                }
+                                            }
+
+                                        }, 4000);
+
+
+
                                     }
                                 }, 0);
 

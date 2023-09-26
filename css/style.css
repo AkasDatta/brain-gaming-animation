@@ -170,7 +170,7 @@ img {
 }
 
 
-/* @keyframes scr4-rotate1 {
+@keyframes scr4-rotate1 {
     0% {
         transform: rotate(-45deg);
     }
@@ -178,7 +178,7 @@ img {
     100% {
         transform: rotate(0deg);
     }
-} */
+}
 
 .scr4-img2 {
     width: 30vw;
