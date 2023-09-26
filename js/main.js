@@ -245,6 +245,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         //     scr4Data.style.animation = 'scr4-zoomIn2 2s 2s both';
                                         // }
 
+
                                         // Skip 
                                         setTimeout(() => {
                                             const scr4Data1 = mE.querySelector(".scr4-data1-dis");
@@ -256,6 +257,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             // }
                                         }, 5000);
 
+                                        
                                     }
                                 }, 0);
 
