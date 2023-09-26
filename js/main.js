@@ -37,6 +37,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                         "set": (k, v, thisItem) => {
                             console.log(thisItem);
                             //--reset--// [START]
+
                             v["el"].innerHTML = ``; //reset
 
                             //set..

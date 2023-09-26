@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain gym</title>
+    <style>
+        body, html {
+            background: #3f043e;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        img {
+            transition: transform 2s;
+        }
+
+        .mainImage:hover {
+            transform: scale(40);
+        }
+
+        .overlay-image:hover {
+            transform: scale(30);
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            z-index: 1;
+            transition: transform 2s;
+        }
+
+        .show-overlay {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .overlay-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 1;
+            color: white;
+            font-weight: bold;
+            border: whitesmoke;
+            border-radius: 78px;
+            background: #B074A9;
+            width: 260px;
+            height: 60px;
+            flex-shrink: 0;
+            font-size: larger;
+        }
+
+        .show-button {
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="/assects/Vector.svg" alt="" id="mainImage" class="mainImage">
+    <img src="/assects/Vector.svg" alt="" class="overlay-image" id="overlayImage">
+    <button class="overlay-button">Loading</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.getElementById('mainImage');
+            const overlayImage = document.getElementById('overlayImage');
+            const overlayButton = document.querySelector('.overlay-button');
+
+            mainImage.addEventListener('transitionend', function() {
+                overlayImage.classList.add('show-overlay');
+                overlayImage.addEventListener('transitionend', function() {
+                    overlayButton.classList.add('show-button');
+                });
+                mainImage.style.transform = "scale(40)";
+            });
+
+            overlayImage.addEventListener('transitionend', function() {
+                overlayImage.style.transform = "scale(30)";
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
