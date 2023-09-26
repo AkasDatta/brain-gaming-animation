@@ -40,20 +40,17 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             v["el"].innerHTML = ``; //reset
 
-                            //--reset--// [END]
-
                             //set..
                             let mScr = document.createElement("div");
                             v["el"].appendChild(mScr);
 
                             //set..
                             let mSet = (mE = document.body) => { //**Have to understand it from sir**
-                                //do your code..
                                 mE.innerHTML = `
-                                    <div class="scr scr1 scr-transition">
-                                        <img src="../assets/1.svg" alt="">
+                                    <div class="scr1 scr-transition">
+                                        <img class="scr1-img" src="../assets/1.svg" alt="">
+                                        <-- <img class="scr1-img2" src="../assets/English_Mastery_Quest.svg" alt=""> -->
                                     </div>
-                                
                                 `;
 
                                 setTimeout(() => {
@@ -61,7 +58,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                     if (screenElement) {
                                         screenElement.style.opacity = 1;
                                     }
-                                }, 0); 
+                                }, 0);
 
                             };
                             mSet(mScr);
@@ -75,7 +72,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                             console.log(thisItem);
                             //--reset--// [START]
                             v["el"].innerHTML = ``; //reset
-                            //--reset--// [END]
 
                             //set..
                             let mScr = document.createElement("div");
@@ -84,14 +80,13 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mSet = (mE = document.body) => {
-                                //do your code..
                                 mE.innerHTML = `
                                 <div class="scr2 scr-transition">
-                                    <img src="../assets/2.svg" alt="">
+                                    <img class="scr2-img" src="../assets/2.svg" alt="">
                                 </div>
                                 
                                 `;
-                                
+
                                 setTimeout(() => {
                                     const screenElement = mE.querySelector('.scr2');
                                     if (screenElement) {
@@ -111,7 +106,85 @@ let mGameRenderer = (data = {}, mDOM) => {
                             console.log(thisItem);
                             //--reset--// [START]
                             v["el"].innerHTML = ``; //reset
-                            //--reset--// [END]
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            v["el"].appendChild(mScr);
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr3 scr-transition scr3-bg-img">
+                                   <img class="scr3-img1 mainImage" src="../assets/rotate_90.svg" alt="">
+
+                                    <img src="/assets/rotate_90_lesser.svg" alt="" class="scr3-img2 show-overlay overlay-image"> 
+
+                                    <div class="overlay-Loading">
+                                        <div class="loading-spans">
+                                            <span class="loading-ball"></span>
+                                            <span class="loading-text">Loading</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                `;
+
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr3');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+
+                                        // Auto ZoomIn for both img
+                                        const img1 = screenElement.querySelector('.scr3-img1');
+                                        if (img1) {
+                                            img1.style.animation = 'zoomIn1 2s 1s both';
+                                        }
+
+                                        const img2 = screenElement.querySelector('.scr3-img2');
+                                        if (img2) {
+                                            img2.style.animation = 'zoomIn2 2s 2s both';
+                                        }
+
+                                        // Overlay Loading:-
+                                        const overlayLoading = screenElement.querySelector('.overlay-Loading');
+                                        const loadingBall = screenElement.querySelector('.loading-ball');
+
+                                        if (overlayLoading) {
+                                            overlayLoading.style.animation = 'zoomInLoading 1s 3s both';
+
+                                            setTimeout(() => {
+                                                loadingBall.style.width = '100%';
+                                            }, 3000); 
+
+                                            // zoomOutLoading
+                                            setTimeout(() => {
+                                                overlayLoading.style.animation = 'zoomOutLoading 1s 3s both';
+                                            }, 3500);
+                                        }
+
+                                        // ZoomOut and hide img2
+                                        setTimeout(() =>{
+                                            img2.style.animation = 'zoomOut2 2s 2s both';
+                                        }, 5000);
+
+                                        setTimeout(() =>{
+                                            img1.style.transform = 'rotate(45deg)';
+                                        }, 6000);
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 4",
+                        "key": "scr_4",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
 
                             //set..
                             let mScr = document.createElement("div");
@@ -120,16 +193,49 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                             //set..
                             let mSet = (mE = document.body) => {
-                                //do your code..
                                 mE.innerHTML = `
-                                <div class="scr3 scr-transition">
-                                    <img src="../assets/rotate_90.svg" alt="">
+                                <div class="scr4 scr-transition">
+                                    <img class="scr4-img" src="../assets/rotate_90.svg" alt="">
                                 </div>
                                 
                                 `;
 
                                 setTimeout(() => {
-                                    const screenElement = mE.querySelector('.scr3');
+                                    const screenElement = mE.querySelector('.scr4');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 5",
+                        "key": "scr_5",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            v["el"].appendChild(mScr);
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr5 scr-transition">
+                                    <img class="scr5-img" src="../assets/rotate_90.svg" alt="">
+                                </div>
+                                
+                                `;
+
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr5');
                                     if (screenElement) {
                                         screenElement.style.opacity = 1;
                                     }
