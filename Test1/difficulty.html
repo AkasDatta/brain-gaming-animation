@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difficulty Level</title>
+    <style>
+        body, html {
+            background: #3f043e;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .circle{
+            width: 50px;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: white;
+            margin-top: 20px; /* Add margin to create some space */
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        img {
+            transition: transform 2s;
+        }
+        h2{
+            font-size: 50px;
+        }
+
+        .mainImage:hover {
+            transform: scale(40);
+        }
+
+        .button {
+            color: white;
+            font-weight: bold;
+            border: whitesmoke;
+            border-radius: 87px;
+            background: #7F007F;
+            width: 260px;
+            height: 60px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 80px;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: #7F007F;
+            cursor: pointer;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .circle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .circle {
+            margin: 0 10px; /* Adjust the margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <img src="/assects/Vector.svg" alt="" id="mainImage" class="mainImage">
+
+    <div class="overlay-content" id="overlayContent">
+        <h2>Difficulty Level</h2>
+        <div class="image-container">
+            <img src="/assects/Line/Line 1.png" alt="">
+            <div class="circle-container">
+                <img class="circle" src="/assects/Line/Ellipse 1.png" alt="">
+            </div>
+            <img src="/assects/Line/Line 2.png" alt="">
+        </div>
+        <h2>Speed</h2>
+        <div class="image-container">
+            <img src="/assects/Line/Line 3.svg" alt="">
+            <div class="circle-container">
+                <img class="circle" src="/assects/Line/Ellipse 2.svg" alt="">
+            </div>
+            <img src="/assects/Line/Line 4.svg" alt="">
+        </div>
+        <button class="button">Click Me</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.getElementById('mainImage');
+            const overlayContent = document.getElementById('overlayContent');
+
+            mainImage.addEventListener('transitionend', function() {
+                overlayContent.style.display = "block"; // Show the text
+                mainImage.style.transform = "scale(40)";
+            });
+        });
+    </script>
+</body>
+</html>
