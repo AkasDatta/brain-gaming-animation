@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two</title>
+    <title>Question</title>
     <style>
         body, html {
             background: #3f043e;
@@ -33,7 +33,8 @@
         }
 
         .overlay-image,
-        .overlay-image2 {
+        .overlay-image2,
+        .overlay-image3 {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -42,11 +43,8 @@
             z-index: 1;
             transition: transform 2s;
         }
-        .bg{
-            color: white;
-        }
         .overlay-image2{
-            width: 280px;
+            width: 350px;
         }
 
         .show-overlay {
@@ -62,20 +60,46 @@
 </head>
 <body>
     <img src="/assects/Vector.svg" alt="" id="mainImage" class="mainImage">
-    <img src="/assects/white.svg" alt="" class="overlay-image bg" id="overlayImage">
-    <img src="/assects/ready/3.svg" alt="" class="overlay-image overlay-image2" id="overlayImage2">
+    <img src="/assects/Vector11.svg" alt="" class="overlay-image" id="overlayImage">
+    <img src="/assects/question/What.svg" alt="" class="overlay-image overlay-image2" id="overlayImage2">
+    <img src="/assects/question/Is.svg" alt="" class="overlay-image overlay-image3" id="overlayImage3">
+    <img src="/assects/question/Your.svg" alt="" class="overlay-image overlay-image4" id="overlayImage4">
+    <img src="/assects/question/Name_.svg" alt="" class="overlay-image overlay-image5" id="overlayImage5">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mainImage = document.getElementById('mainImage');
             const overlayImage = document.getElementById('overlayImage');
             const overlayImage2 = document.getElementById('overlayImage2');
+            const overlayImage3 = document.getElementById('overlayImage3');
+            const overlayImage4 = document.getElementById('overlayImage4');
+            const overlayImage5 = document.getElementById('overlayImage5');
 
             mainImage.addEventListener('transitionend', function() {
                 overlayImage.classList.add('show-overlay');
                 overlayImage.addEventListener('transitionend', function() {
                     overlayImage2.style.transform = "translate(-50%, -50%) scale(1)";
                     overlayImage2.style.opacity = "1";
+                    setTimeout(function() {
+                        overlayImage3.style.transform = "translate(-50%, -50%) scale(1)";
+                        overlayImage3.style.opacity = "1";
+                        overlayImage2.style.opacity = "0"; // Hide "what.svg"
+
+                        setTimeout(function() {
+                            overlayImage4.style.transform = "translate(-50%, -50%) scale(1)";
+                            overlayImage4.style.opacity = "1";
+                            overlayImage3.style.opacity = "0"; // Hide "is.svg"
+
+                            setTimeout(function() {
+                                overlayImage5.style.transform = "translate(-50%, -50%) scale(1)";
+                                overlayImage5.style.opacity = "1";
+                                overlayImage4.style.opacity = "0"; // Hide "your.svg"
+                                overlayImage5.style.opacity = "1"; // Show "name.svg"
+                                overlayImage3.style.opacity = "0"; // Hide "is.svg"
+                                overlayImage4.style.opacity = "0"; // Hide "your.svg"
+                            }, 1000); // Delay of 1 second for "name.svg"
+                        }, 1000); // Delay of 1 second for "your.svg"
+                    }, 1000); // Delay of 1 second for "is.svg"
                 });
                 mainImage.style.transform = "scale(40)";
             });
