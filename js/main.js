@@ -253,13 +253,13 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             const scr4Data2 = mE.querySelector(".scr4-data2-dis");
 
                                             // let scr4Data2Dis = () => {
-                                                scr4Data1.style.opacity = 0;
-                                                scr4Data2.style.opacity = 1;
+                                            scr4Data1.style.opacity = 0;
+                                            scr4Data2.style.opacity = 1;
 
-                                                setTimeout(() => {
-                                                    scr4Data2.style.opacity = 0;
-                                                    rotateTheImg1();
-                                                }, 2000);
+                                            setTimeout(() => {
+                                                scr4Data2.style.opacity = 0;
+                                                rotateTheImg1();
+                                            }, 2000);
                                             // }
                                             const scr4Img1 = mE.querySelector(".scr4-img1");
                                             let rotateTheImg1 = () => {
@@ -271,6 +271,194 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         }, 4000);
 
 
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 5",
+                        "key": "scr_5",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
+                            v["el"].appendChild(mScr);
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr5 scr-transition scr5-bg-img">
+                                    <div class="img-container">
+                                        <img class="scr5-img1" src="../assets/rotate_90.svg" alt="rotate">
+                                    </div>
+
+                                    <!-- Difficulty Level --!>
+                                    <div class="scr5-data1">
+
+                                        <div class="scr5-div">
+                                            <h1 class="scr5-h1">Difficulty Level</h1>
+                                            <div class="scr5-image-cont">
+                                                <div class="scr5-circle1">5</div>
+                                                <img class="scr5-level" src="../assets/line_4.svg" alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="scr5-div">
+                                            <h1 class="scr5-h1">Speed</h1>
+                                            <div class="scr5-image-cont">
+                                                <div class="scr5-circle2">10</div>
+                                                <img class="circle" src="../assets/line_4.svg" alt="">
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="scr5-btn">Start</button>
+                                    </div>
+                                   
+                                </div>
+                                
+                                `;
+                            //<!-- --!>
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr5');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+
+                                        const scr5Data = screenElement.querySelector('.scr5-data');
+                                        if (scr5Data) {
+                                            // scr5Data.style.animation = 'scr5-zoomIn2 2s 2s both';
+                                        }
+
+
+                                        const img2 = screenElement.querySelector('.overlay-data2-img');
+                                        if (img2) {
+                                            // img2.style.animation = 'zoomIn2 2s 2s both';
+                                        }
+
+
+                                        // Start
+                                        setTimeout(() => {
+                                            const scr5Data1 = mE.querySelector(".scr5-data1");
+
+                                            scr5Data1.style.animation = "scr5-moveOutData 2s ease-in";
+                                            
+                                            setTimeout(() => {
+                                                scr5Data1.style.opacity = 0;
+                                                countDown();
+                                            }, 2000);
+                                        }, 4000);
+
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 6",
+                        "key": "scr_6",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
+                            v["el"].appendChild(mScr);
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr6 scr-transition scr6-bg-img">
+                                    
+                                    <img class="scr6-img1" src="../assets/rotate_90.svg" alt="rotate">
+
+                                    <img class="scr6-img2" src="../assets/rotate_90_lesser.svg" alt="cover">
+
+                                    <!-- Countdown --!>
+                                        <div class="scr6-count scr6-count-ready">
+                                            <img class=" scr6-data-img2" src="../assets/count/ready.svg" alt="ready">                 
+                                        </div>
+                                        <div class="scr6-count scr6-count-1">
+                                            <img class=" scr6-data-img2" src="../assets/count/count_1.svg" alt="1">
+                                        </div>
+                                        <div class="scr6-count scr6-count-2">
+                                            <img class=" scr6-data-img2" src="../assets/count/count_2.svg" alt="2"> 
+                                        </div>
+                                        <div class="scr6-count scr6-count-3">
+                                            <img class=" scr6-data-img2" src="../assets/count/count_3.svg" alt="3">
+                                        </div>
+                                   
+                                </div>
+                                
+                                `;
+
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr6');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+
+                                        // Auto ZoomIn 
+                                        const img2 = screenElement.querySelector('.scr6-img2');
+                                        if (img2) {
+                                             img2.style.animation = 'scr6-zoomIn2 2s 2s both';
+                                        }
+ 
+
+                                        // Count
+                                        const scr6Count = screenElement.querySelector('.scr6-count');
+                                        const scr6CountReady = screenElement.querySelector('.scr6-count-ready');
+                                        const scr6Count1 = screenElement.querySelector(".scr6-count-1");
+                                        const scr6Count2 = screenElement.querySelector(".scr6-count-2");
+                                        const scr6Count3 = screenElement.querySelector(".scr6-count-3");
+
+                                        if (scr6Count) {
+                                            scr6Count.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6Count.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                countDown1();
+                                            }, 3000);
+
+                                        }
+                                        
+                                        let countDown1 = ()=>{
+                                            scr6Count1.style.animation = 'scr6-zoomInCount 1s 4s both';
+                                            setTimeout(() => {
+                                                scr6Count1.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                countDown2();
+
+                                            }, 3000);
+                                        }
+                                        
+                                        let countDown2 = ()=>{
+                                            scr6Count2.style.animation = 'scr6-zoomInCount 1s 5s both';
+                                            setTimeout(() => {
+                                                scr6Count2.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                countDown3();
+
+                                            }, 3000);
+                                        }
+
+                                        let countDown3 = ()=>{
+                                            scr6Count3.style.animation = 'scr6-zoomInCount 1s 6s both';
+                                            setTimeout(() => {
+                                                scr6Count3.style.animation = 'scr6-zoomOutCount 1s 3s both';
+
+                                            }, 3000);
+                                        }
 
                                     }
                                 }, 0);
@@ -307,7 +495,7 @@ let mGameRenderer = (data = {}, mDOM) => {
 
 
     //mStart..
-    let mStart = (mE) => {        //mE is mDiv
+    let mStart = (mE) => {     //--> mE is mDiv
         //set..
         mDta_main.screens.set("scr_1", {
             "el": mE,
@@ -323,7 +511,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                 "value": {
                     //here you can assign your variable based on your requirements..
 
-
                 }
             });
         }, 2000);
@@ -333,7 +520,6 @@ let mGameRenderer = (data = {}, mDOM) => {
                 "el": mE,
                 "value": {
                     //here you can assign your variable based on your requirements..
-
 
                 }
             });
@@ -345,10 +531,29 @@ let mGameRenderer = (data = {}, mDOM) => {
                 "value": {
                     //here you can assign your variable based on your requirements..
 
-
                 }
             });
         }, 14000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_5", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+                }
+            });
+        }, 24000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_6", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+                }
+            });
+        }, 28000);
 
 
     };
