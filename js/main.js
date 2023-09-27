@@ -348,11 +348,10 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         setTimeout(() => {
                                             const scr5Data1 = mE.querySelector(".scr5-data1");
 
-                                            scr5Data1.style.animation = "scr5-moveOutData 2s ease-in";
+                                            // scr5Data1.style.animation = "scr5-moveOutData 2s ease-in";
 
                                             setTimeout(() => {
                                                 scr5Data1.style.opacity = 0;
-                                                countDown();
                                             }, 2000);
                                         }, 4000);
 
@@ -403,20 +402,26 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         <div class="scr6-count scr6-count-3">
                                             <img class="scr6-data-imgs" src="../assets/count/count_3.svg" alt="3">
                                         </div>
-                                   
+                                        
+                                        
+                                        <!-- Question--!>
 
-                                    <!-- Question--!>
+                                        <div class="stats">
+                                            <p>Level: 5</p>
+                                            <p>Round: 1</p>
+                                        </div>   
+
                                         <div class="scr6-count scr6-count-what">
-                                            <img class="scr6-data-imgs" src="../assets/count/what.svg" alt="what">                 
+                                            <img class="scr6-data-imgs" src="../assets/count/what.svg" alt="what"> 
                                         </div>
                                         <div class="scr6-count scr6-count-is">
-                                            <img class="scr6-data-imgs" src="../assets/count/is.svg" alt="is">                 
+                                            <img class="scr6-data-imgs" src="../assets/count/is.svg" alt="is">                    
                                         </div>
                                         <div class="scr6-count scr6-count-your">
                                             <img class="scr6-data-imgs" src="../assets/count/your.svg" alt="your">                 
                                         </div>
                                         <div class="scr6-count scr6-count-name">
-                                            <img class="scr6-data-imgs" src="../assets/count/name.svg" alt="name">                 
+                                            <img class="scr6-data-imgs" src="../assets/count/name.svg" alt="name">               
                                         </div>
                                 </div>
                                 
@@ -496,9 +501,11 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         const scr6CountIs = screenElement.querySelector('.scr6-count-is');
                                         const scr6CountYour = screenElement.querySelector('.scr6-count-your');
                                         const scr6CountName = screenElement.querySelector('.scr6-count-name');
+                                        const scr6Stats = screenElement.querySelector('.stats');
 
                                         let ques1 = () => {
                                             scr6CountWhat.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Stats.style.animation = 'scr6-zoomInCount 1s 3s both';
 
                                             setTimeout(() => {
                                                 scr6CountWhat.style.animation = 'scr6-zoomOutCount 1s 3s both';
@@ -548,9 +555,127 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                                                 setTimeout(() => {
                                                         img2.style.animation = 'scr6-zoomOutCount 1s 1s both';
-                                                }, 1000);
+                                                }, 2000);
                                             }, 4000);
                                         }
+
+
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 7",
+                        "key": "scr_7",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
+                            v["el"].appendChild(mScr);
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr7 scr-transition scr7-bg-img">
+                                    <div class="img-container">
+                                        <img class="scr7-img1" src="../assets/rotate_90.svg" alt="rotate">
+                                    </div>
+
+                                    <div class="scr7-data scr7-data1-dis">
+                                        
+                                        <button onclick="" class="scr7-skip-btn">Select</button>
+                                    </div>
+                                </div>
+                                
+                                `;
+
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr7');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+
+                                        // const scr7Data = screenElement.querySelector('.scr7-data');
+                                        // if (scr7Data) {
+                                        //     scr7Data.style.animation = 'scr7-zoomIn2 2s 2s both';
+                                        // }
+
+
+                                        // Skip 
+                                        setTimeout(() => {
+                                            
+                                        }, 4000);
+
+
+                                    }
+                                }, 0);
+
+                            };
+                            mSet(mScr);
+                        }
+                    },
+
+                    {
+                        "name": "Screen 8",
+                        "key": "scr_8",
+                        "set": (k, v, thisItem) => {
+                            console.log(thisItem);
+                            //--reset--// [START]
+                            v["el"].innerHTML = ``; //reset
+
+                            //set..
+                            let mScr = document.createElement("div");
+                            mScr.classList.add('mScr');
+                            v["el"].appendChild(mScr);
+
+
+                            //set..
+                            let mSet = (mE = document.body) => {
+                                mE.innerHTML = `
+                                <div class="scr8 scr-transition scr8-bg-img">
+                                    <img class="scr8-img1" src="../assets/rotate_90.svg" alt="rotate">
+
+                                    <img class="scr8-img2" src="../assets/rotate_90_lesser.svg" alt="cover">
+
+                                    <img class="scr8-img3" src="../assets/count/white.svg" alt="cover">
+
+                                    <div class="scr8-data">
+                                        <h1 class="scr8-h1">Speed Upgraded To</h1>
+                                        <h2 class="scr8-h2">11</h2>
+                                    </div>
+
+                                </div>
+                                
+                                `;
+
+                                setTimeout(() => {
+                                    const screenElement = mE.querySelector('.scr8');
+                                    if (screenElement) {
+                                        screenElement.style.opacity = 1;
+
+                                        const scr8Img2 = screenElement.querySelector('.scr8-img2');
+                                        if (scr8Img2) {
+                                            scr8Img2.style.animation = 'scr8-zoomIn2 2s 2s both';
+                                        }
+
+                                        const scr8Data = screenElement.querySelector(".scr8-data");
+                                        if(scr8Data){
+                                            scr8Data.style.animation = "scr8-zoomInData 2s 2s both";
+                                        }
+
+
+                                        // Skip 
+                                        setTimeout(() => {
+                                            
+                                        }, 4000);
 
 
                                     }
@@ -646,7 +771,27 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                 }
             });
-        }, 28000);
+        }, 30000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_7", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+                }
+            });
+        }, 60000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_8", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+                }
+            });
+        },70000);
 
 
     };
