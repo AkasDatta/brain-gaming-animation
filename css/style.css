@@ -413,10 +413,31 @@ img {
     height: 25px;
     width: 25px;
     transition: transform 2s;
-    transform: scale(1.25);
+    opacity: 1;
 }
 
 @keyframes scr6-zoomIn2 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(25);
+    }
+}
+
+.scr6-img3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    transition: transform 2s;
+    opacity: 0;
+}
+
+@keyframes scr6-zoomIn3 {
     0% {
         transform: scale(0);
     }
@@ -438,6 +459,9 @@ img {
     flex-shrink: 0;
     text-align: center;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes scr6-zoomInCount {
@@ -460,8 +484,8 @@ img {
     }
 }
 
-.scr6-data-img2{
-    width: 400px;
+.scr6-data-imgs{
+    height: 300px;
     width: 400px;
 }
 
@@ -472,5 +496,8 @@ img {
     opacity: 0;
 }
 .scr6-count-3{
+    opacity: 0;
+}
+.scr6-count-what, .scr6-count-is, .scr6-count-your, .scr6-count-name{
     opacity: 0;
 }

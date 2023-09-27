@@ -326,7 +326,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 </div>
                                 
                                 `;
-                            //<!-- --!>
+                                //<!-- --!>
                                 setTimeout(() => {
                                     const screenElement = mE.querySelector('.scr5');
                                     if (screenElement) {
@@ -349,7 +349,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             const scr5Data1 = mE.querySelector(".scr5-data1");
 
                                             scr5Data1.style.animation = "scr5-moveOutData 2s ease-in";
-                                            
+
                                             setTimeout(() => {
                                                 scr5Data1.style.opacity = 0;
                                                 countDown();
@@ -383,24 +383,41 @@ let mGameRenderer = (data = {}, mDOM) => {
                                 mE.innerHTML = `
                                 <div class="scr6 scr-transition scr6-bg-img">
                                     
-                                    <img class="scr6-img1" src="../assets/rotate_90.svg" alt="rotate">
+                                    <img class="scr6-img1" src="../assets/rotate_90.svg" alt="rotational">
 
                                     <img class="scr6-img2" src="../assets/rotate_90_lesser.svg" alt="cover">
 
+                                    <img class="scr6-img3" src="../assets/count/white.svg" alt="cover">
+
+
                                     <!-- Countdown --!>
                                         <div class="scr6-count scr6-count-ready">
-                                            <img class=" scr6-data-img2" src="../assets/count/ready.svg" alt="ready">                 
+                                            <img class="scr6-data-imgs" src="../assets/count/ready.svg" alt="ready">                 
                                         </div>
                                         <div class="scr6-count scr6-count-1">
-                                            <img class=" scr6-data-img2" src="../assets/count/count_1.svg" alt="1">
+                                            <img class="scr6-data-imgs" src="../assets/count/count_1.svg" alt="1">
                                         </div>
                                         <div class="scr6-count scr6-count-2">
-                                            <img class=" scr6-data-img2" src="../assets/count/count_2.svg" alt="2"> 
+                                            <img class="scr6-data-imgs" src="../assets/count/count_2.svg" alt="2"> 
                                         </div>
                                         <div class="scr6-count scr6-count-3">
-                                            <img class=" scr6-data-img2" src="../assets/count/count_3.svg" alt="3">
+                                            <img class="scr6-data-imgs" src="../assets/count/count_3.svg" alt="3">
                                         </div>
                                    
+
+                                    <!-- Question--!>
+                                        <div class="scr6-count scr6-count-what">
+                                            <img class="scr6-data-imgs" src="../assets/count/what.svg" alt="what">                 
+                                        </div>
+                                        <div class="scr6-count scr6-count-is">
+                                            <img class="scr6-data-imgs" src="../assets/count/is.svg" alt="is">                 
+                                        </div>
+                                        <div class="scr6-count scr6-count-your">
+                                            <img class="scr6-data-imgs" src="../assets/count/your.svg" alt="your">                 
+                                        </div>
+                                        <div class="scr6-count scr6-count-name">
+                                            <img class="scr6-data-imgs" src="../assets/count/name.svg" alt="name">                 
+                                        </div>
                                 </div>
                                 
                                 `;
@@ -412,14 +429,17 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                                         // Auto ZoomIn 
                                         const img2 = screenElement.querySelector('.scr6-img2');
+                                        const img3 = screenElement.querySelector('.scr6-img3');
                                         if (img2) {
-                                             img2.style.animation = 'scr6-zoomIn2 2s 2s both';
+                                            img2.style.animation = 'scr6-zoomIn2 2s 2s both';
                                         }
- 
+                                        if (img3) {
+                                            img3.style.animation = 'scr6-zoomIn3 2s 2s both';
+                                        }
 
-                                        // Count
+
+                                        // Countdown
                                         const scr6Count = screenElement.querySelector('.scr6-count');
-                                        const scr6CountReady = screenElement.querySelector('.scr6-count-ready');
                                         const scr6Count1 = screenElement.querySelector(".scr6-count-1");
                                         const scr6Count2 = screenElement.querySelector(".scr6-count-2");
                                         const scr6Count3 = screenElement.querySelector(".scr6-count-3");
@@ -433,18 +453,18 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             }, 3000);
 
                                         }
-                                        
-                                        let countDown1 = ()=>{
-                                            scr6Count1.style.animation = 'scr6-zoomInCount 1s 4s both';
+
+                                        let countDown1 = () => {
+                                            scr6Count1.style.animation = 'scr6-zoomInCount 1s 3s both';
                                             setTimeout(() => {
                                                 scr6Count1.style.animation = 'scr6-zoomOutCount 1s 3s both';
                                                 countDown2();
 
                                             }, 3000);
                                         }
-                                        
-                                        let countDown2 = ()=>{
-                                            scr6Count2.style.animation = 'scr6-zoomInCount 1s 5s both';
+
+                                        let countDown2 = () => {
+                                            scr6Count2.style.animation = 'scr6-zoomInCount 1s 3s both';
                                             setTimeout(() => {
                                                 scr6Count2.style.animation = 'scr6-zoomOutCount 1s 3s both';
                                                 countDown3();
@@ -452,13 +472,86 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             }, 3000);
                                         }
 
-                                        let countDown3 = ()=>{
-                                            scr6Count3.style.animation = 'scr6-zoomInCount 1s 6s both';
+                                        const scr6Img2 = screenElement.querySelector('.scr6-img2');
+                                        const scr6Img3 = screenElement.querySelector('.scr6-img3');
+                                        let countDown3 = () => {
+                                            scr6Count3.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6Img2.style.opacity = 0;
+                                                scr6Img2.style.display = "none";
+
+                                                scr6Img3.style.opacity = 1;
+                                            }, 3000);
+
                                             setTimeout(() => {
                                                 scr6Count3.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                ques1();
+                                            }, 3000);
+                                        }
+
+
+                                        // Questions
+                                        const scr6CountWhat = screenElement.querySelector('.scr6-count-what');
+                                        const scr6CountIs = screenElement.querySelector('.scr6-count-is');
+                                        const scr6CountYour = screenElement.querySelector('.scr6-count-your');
+                                        const scr6CountName = screenElement.querySelector('.scr6-count-name');
+
+                                        let ques1 = () => {
+                                            scr6CountWhat.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6CountWhat.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                ques2();
 
                                             }, 3000);
                                         }
+
+                                        let ques2 = () => {
+                                            scr6CountIs.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6CountIs.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                ques3();
+
+                                            }, 3000);
+                                        }
+
+                                        let ques3 = () => {
+                                            scr6CountYour.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6CountYour.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                ques4();
+
+                                            }, 3000);
+                                        }
+
+                                        let ques4 = () => {
+                                            scr6CountName.style.animation = 'scr6-zoomInCount 1s 3s both';
+
+                                            setTimeout(() => {
+                                                scr6CountName.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                lesserOverlayChange();
+                                            }, 3000);
+                                        }
+
+                                        let lesserOverlayChange = () => {
+                                            
+                                            setTimeout(() => {
+                                                scr6Img2.style.opacity = 1;
+                                                scr6Img2.style.display = "block";
+                                            
+                                                
+                                                scr6Img3.style.opacity = 0;
+                                                scr6Img3.style.display = "none";
+
+                                                setTimeout(() => {
+                                                        img2.style.animation = 'scr6-zoomOutCount 1s 1s both';
+                                                }, 1000);
+                                            }, 4000);
+                                        }
+
 
                                     }
                                 }, 0);
