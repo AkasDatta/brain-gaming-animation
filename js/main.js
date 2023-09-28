@@ -118,8 +118,9 @@ let mGameRenderer = (data = {}, mDOM) => {
                             let mSet = (mE = document.body) => {
                                 mE.innerHTML = `
                                 <div class="scr3 scr-transition scr3-bg-img">
-                                   <img class="scr3-img1" src="../assets/rotate_90.svg" alt="">
-
+                                   
+                                    <img class="scr3-img1" src="../assets/rotate_90.svg" alt="">
+                                   
                                     <img class="scr3-img2" src="/assets/rotate_90_lesser.svg" alt=""> 
 
                                     <div class="overlay-Loading">
@@ -171,6 +172,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             img2.style.animation = 'zoomOut2 2s 2s both';
                                         }, 5500);
 
+                                        // rotate img1
                                         setTimeout(() => {
                                             if (img1) {
                                                 img1.style.animation = 'rotate1 2s 1s both';
@@ -185,7 +187,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
+// Screen-4
                     {
                         "name": "Screen 4",
                         "key": "scr_4",
@@ -278,7 +280,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
+// Screen-5 
                     {
                         "name": "Screen 5",
                         "key": "scr_5",
@@ -362,7 +364,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
+// Screen-6
                     {
                         "name": "Screen 6",
                         "key": "scr_6",
@@ -450,49 +452,49 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         const scr6Count3 = screenElement.querySelector(".scr6-count-3");
 
                                         if (scr6Count) {
-                                            scr6Count.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Count.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
-                                                scr6Count.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6Count.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 countDown1();
-                                            }, 3000);
+                                            }, 2000);
 
                                         }
 
                                         let countDown1 = () => {
-                                            scr6Count1.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Count1.style.animation = 'scr6-zoomInCount 1s 2s both';
                                             setTimeout(() => {
-                                                scr6Count1.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6Count1.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 countDown2();
 
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         let countDown2 = () => {
-                                            scr6Count2.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Count2.style.animation = 'scr6-zoomInCount 1s 2s both';
                                             setTimeout(() => {
-                                                scr6Count2.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6Count2.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 countDown3();
 
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         const scr6Img2 = screenElement.querySelector('.scr6-img2');
                                         const scr6Img3 = screenElement.querySelector('.scr6-img3');
                                         let countDown3 = () => {
-                                            scr6Count3.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Count3.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
                                                 scr6Img2.style.opacity = 0;
                                                 scr6Img2.style.display = "none";
 
                                                 scr6Img3.style.opacity = 1;
-                                            }, 3000);
+                                            }, 2000);
 
                                             setTimeout(() => {
-                                                scr6Count3.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6Count3.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 ques1();
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
 
@@ -505,58 +507,58 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                                         let ques1 = () => {
                                             scr6CountWhat.style.animation = 'scr6-zoomInCount 1s 3s both';
-                                            scr6Stats.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6Stats.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
-                                                scr6CountWhat.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6CountWhat.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 ques2();
 
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         let ques2 = () => {
-                                            scr6CountIs.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6CountIs.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
-                                                scr6CountIs.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6CountIs.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 ques3();
 
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         let ques3 = () => {
-                                            scr6CountYour.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6CountYour.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
-                                                scr6CountYour.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6CountYour.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 ques4();
 
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         let ques4 = () => {
-                                            scr6CountName.style.animation = 'scr6-zoomInCount 1s 3s both';
+                                            scr6CountName.style.animation = 'scr6-zoomInCount 1s 2s both';
 
                                             setTimeout(() => {
-                                                scr6CountName.style.animation = 'scr6-zoomOutCount 1s 3s both';
+                                                scr6CountName.style.animation = 'scr6-zoomOutCount 1s 2s both';
                                                 lesserOverlayChange();
-                                            }, 3000);
+                                            }, 2000);
                                         }
 
                                         let lesserOverlayChange = () => {
-                                            
+
                                             setTimeout(() => {
                                                 scr6Img2.style.opacity = 1;
                                                 scr6Img2.style.display = "block";
-                                            
-                                                
+
+
                                                 scr6Img3.style.opacity = 0;
                                                 scr6Img3.style.display = "none";
 
                                                 setTimeout(() => {
-                                                        img2.style.animation = 'scr6-zoomOutCount 1s 1s both';
-                                                }, 2000);
-                                            }, 4000);
+                                                    img2.style.animation = 'scr6-zoomOutCount 1s 1s both';
+                                                }, 4000);
+                                            }, 3000);
                                         }
 
 
@@ -567,7 +569,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             mSet(mScr);
                         }
                     },
-
+// Screen 7
                     {
                         "name": "Screen 7",
                         "key": "scr_7",
@@ -582,7 +584,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                             v["el"].appendChild(mScr);
 
 
-                            //set..
+                            //mset..
                             let mSet = (mE = document.body) => {
                                 mE.innerHTML = `
                                 <div class="scr7 scr-transition scr7-bg-img">
@@ -590,9 +592,25 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         <img class="scr7-img1" src="../assets/rotate_90.svg" alt="rotate">
                                     </div>
 
-                                    <div class="scr7-data scr7-data1-dis">
-                                        
-                                        <button onclick="" class="scr7-skip-btn">Select</button>
+                                    <div class="scr7-data">
+                                        <div>
+                                            <div class="scr7-ques">
+                                                <span class="scr7-quesText">Defines if the animation should automatically starts or not.</span>
+
+                                                <div class="scr7-con-div"></div>
+
+                                                <div class="scr7-child-line-cont"></div>
+                                            </div>
+
+                                            <div class="scr7-options">
+                                                <div class="scr7-option1">Option 1</div>
+                                                <div class="scr7-option2">Option 2</div>
+                                            </div>
+                                            <div class="stats">
+                                                <p>Level: 5</p>
+                                                <p>Round: 1</p>
+                                            </div> 
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -603,16 +621,107 @@ let mGameRenderer = (data = {}, mDOM) => {
                                     if (screenElement) {
                                         screenElement.style.opacity = 1;
 
-                                        // const scr7Data = screenElement.querySelector('.scr7-data');
-                                        // if (scr7Data) {
-                                        //     scr7Data.style.animation = 'scr7-zoomIn2 2s 2s both';
-                                        // }
+                                        const scr7Data = screenElement.querySelector('.scr7-data');
+                                        if (scr7Data) {
+                                            scr7Data.style.animation = 'scr7-zoomIn2 2s 2s both';
+                                        }
 
+                                        
+                                        const scr7Ques = screenElement.querySelector('.scr7-ques');
+                                        const scr7ConDiv = screenElement.querySelector('.scr7-con-div');
+                                        const scr7ChildLineCont = screenElement.querySelector('.scr7-child-line-cont');
+                                        const scr7Stats = screenElement.querySelector('.stats');
 
-                                        // Skip 
+                                        scr7Stats.style.opacity = 1;
+
+                                        // Main Annie Parent div:
+                                        anime({
+                                            targets: '.scr7-ques',
+                                            easing: 'easeInOutQuad',
+                                            translateY: 200,
+                                            loop: false
+                                        });
+
+                                        // Create Parent div:
+                                        let scr7ParentLine = document.createElement("div");
+                                        scr7ParentLine.classList.add('scr7-parent-line');
+                                        scr7Ques.appendChild(scr7ParentLine);
+
+                                        // drawing line:
                                         setTimeout(() => {
-                                            
-                                        }, 4000);
+                                            anime({
+                                                targets: '.scr7-parent-line',
+                                                height: '170%', // -> from '28px' to '100%',
+                                                easing: 'easeInOutQuad',
+                                                direction: 'alternate',
+                                                duration: 500,
+                                                loop: false
+                                            });
+                                        }, 1000);
+
+                                        // Show Connecting Circle Div:
+                                        setTimeout(() => {
+                                            scr7ConDiv.style.opacity = 1;
+                                        }, 1500);
+
+
+                                        setTimeout(() => {
+                                            // --------------
+                                            // let scr7ChildLineInnerCont = document.createElement("div");
+                                            // scr7ChildLineInnerCont.classList.add('scr7-child-line-inner-cont');
+
+                                            // let scr7Child1Line = document.createElement("div");
+                                            // scr7Child1Line.classList.add('scr7-child1-line');
+                                            // scr7ChildLineInnerCont.appendChild(scr7Child1Line);
+                                        
+                                            // let scr7Child2Line = document.createElement("div");
+                                            // scr7Child2Line.classList.add('scr7-child2-line');
+                                            // scr7ChildLineInnerCont.appendChild(scr7Child2Line);
+                                            // scr7ChildLineCont.appendChild(scr7ChildLineInnerCont);
+                                            // -----------------
+
+                                            let scr7Child1Line = document.createElement("div");
+                                            scr7Child1Line.classList.add('scr7-child1-line');
+                                            scr7Ques.appendChild(scr7Child1Line);
+                                        
+                                            let scr7Child2Line = document.createElement("div");
+                                            scr7Child2Line.classList.add('scr7-child2-line');
+                                            scr7Ques.appendChild(scr7Child2Line);
+
+                                            // drawing Child lines:
+                                            const scr7Child1LineStyle = screenElement.querySelector('.scr7-child1-line');
+                                            const scr7Child2LineStyle = screenElement.querySelector('.scr7-child2-line');
+                                            scr7Child1LineStyle.style.opacity = 1;
+                                            scr7Child2LineStyle.style.opacity = 1;
+                                            // left
+                                            anime({
+                                                targets: '.scr7-child1-line',
+                                                width: '100%', // -> from '28px' to '100%',
+                                                translateX: -230,
+                                                // rotate: -180,
+                                                // direction: 'reverse',
+                                                direction: 'alternate',
+                                                easing: 'easeInOutQuad',
+                                                duration: 500,
+                                                loop: false
+                                            });
+
+                                            anime({
+                                                targets: '.scr7-child2-line',
+                                                width: '50%', // -> from '28px' to '100%',
+                                                easing: 'easeInOutQuad',
+                                                // direction: 'alternate',
+                                                duration: 500,
+                                                loop: false
+                                            });
+
+                                            const scr7Options = screenElement.querySelector('.scr7-options');
+                                            setTimeout(() => {
+                                                scr7Options.style.opacity = 1;
+                                            }, 400);
+
+                                        }, 2000);
+
 
 
                                     }
@@ -662,20 +771,34 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         screenElement.style.opacity = 1;
 
                                         const scr8Img2 = screenElement.querySelector('.scr8-img2');
+                                        const scr8H1 = screenElement.querySelector('.scr8-h1');
+                                        const scr8Img3 = screenElement.querySelector('.scr8-img3');
+
                                         if (scr8Img2) {
-                                            scr8Img2.style.animation = 'scr8-zoomIn2 2s 2s both';
+                                            scr8Img2.style.animation = 'scr8-zoomIn2 1s 1s both';
+                                        }
+
+                                        if (scr8Img3) {
+                                            scr8Img3.style.animation = 'scr6-zoomIn3 2s 2s both';
                                         }
 
                                         const scr8Data = screenElement.querySelector(".scr8-data");
-                                        if(scr8Data){
+                                        if (scr8Data) {
                                             scr8Data.style.animation = "scr8-zoomInData 2s 2s both";
                                         }
 
 
-                                        // Skip 
                                         setTimeout(() => {
-                                            
-                                        }, 4000);
+                                            scr8H1.style.animation = 'scr8-zoomOutData 2s 2s both';
+
+                                            setTimeout(() => {
+                                                scr8Img2.style.animation = 'scr8-zoomOut2 2s 2s both';
+                                            }, 2000);
+
+                                            if (scr8Img3) {
+                                                scr8Img3.style.animation = 'scr8-zoomIn3 2s 2s both';
+                                            }
+                                        }, 2000);
 
 
                                     }
@@ -714,7 +837,7 @@ let mGameRenderer = (data = {}, mDOM) => {
 
     //mStart..
     let mStart = (mE) => {     //--> mE is mDiv
-        //set..
+        // set..
         mDta_main.screens.set("scr_1", {
             "el": mE,
             "value": {
@@ -723,65 +846,66 @@ let mGameRenderer = (data = {}, mDOM) => {
             }
         });
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_2", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_2", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 2000);
+        //         }
+        //     });
+        // }, 2000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_3", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_3", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 3000);
+        //         }
+        //     });
+        // }, 3000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_4", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_4", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 14000);
+        //         }
+        //     });
+        // }, 14000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_5", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_5", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 24000);
+        //         }
+        //     });
+        // }, 24000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_6", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_6", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 30000);
+        //         }
+        //     });
+        // }, 30000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_7", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_7", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 60000);
+        //         }
+        //     });
+        //     // }, 57000);
+        // }, 3000);
 
         setTimeout(() => {
             mDta_main.screens.set("scr_8", {
@@ -791,7 +915,8 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                 }
             });
-        },70000);
+        // },70000);
+        }, 5000);
 
 
     };

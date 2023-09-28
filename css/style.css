@@ -22,6 +22,20 @@ img {
 
 
 
+/* Screen -2  */
+/* -----------------=------------ */
+.scr1 {
+    height: 100vh;
+}
+
+
+/* Screen -2  */
+/* -----------------=------------ */
+.scr2 {
+    height: 100vh;
+}
+
+
 /*-- Screen 3 --*/
 /* ---------------------------------------- */
 .scr3-bg-img {
@@ -38,7 +52,19 @@ img {
 .scr3-img1 {
     transition: transform 2s;
     position: absolute;
+    /* transform: scale(1.2); */
+
 }
+
+/* .img-container {
+    width: 300px;
+    overflow: hidden; 
+}
+
+.img1 {
+    width: 100%; 
+    transform: scale(1.2);
+} */
 
 @keyframes zoomIn1 {
     0% {
@@ -46,7 +72,7 @@ img {
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1.2);
     }
 }
 
@@ -167,6 +193,7 @@ img {
 
 .scr4-img1 {
     transform: rotate(-45deg);
+    height: 100vh;
 }
 
 
@@ -202,7 +229,7 @@ img {
     transition: transform 2s;
 }
 
-/* 
+
 @keyframes scr4-zoomIn1 {
     0% {
         opacity: 0;
@@ -213,7 +240,7 @@ img {
         opacity: 1;
         transform: scale(1);
     }
-} */
+}
 
 /* 
 @keyframes scr4-zoomOut2 {
@@ -291,6 +318,10 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.scr5-img1 {
+    height: 100vh;
 }
 
 .scr5-data1 {
@@ -404,6 +435,7 @@ img {
 .scr6-img1 {
     transition: transform 2s;
     position: relative;
+    height: 100vh;
 }
 
 .scr6-img2 {
@@ -537,6 +569,190 @@ img {
     background-size: cover;
 }
 
+.scr7-img1 {
+    /* position: absolute;
+    top: 0;
+    bottom: 0; */
+    height: 100vh;
+    object-fit: cover;
+
+}
+
+.scr7-data {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border-radius: 78px;
+    width: 400px;
+    height: 400px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes scr7-zoomInData {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.scr7-ques {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    position: absolute;
+    top: -20%;
+    left: -20%;
+}
+
+.scr7-quesText {
+    position: relative;
+    background-color: #FFF;
+    color: #7D017C;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    width: 600px;
+    height: 120px;
+}
+
+
+.scr7-quesText::before {
+    position: absolute;
+    top: 0px;
+    left: -120px;
+    content: "";
+    width: 0;
+    border-color: transparent #ffffff transparent transparent;
+    border-width: 60px 60px 60px 60px;
+    border-style: solid;
+    margin-inline: 0;
+}
+
+.scr7-quesText::after {
+    position: absolute;
+    top: 0px;
+    right: -120px;
+    content: "";
+    width: 0;
+    border-color: transparent transparent transparent #ffffff;
+    border-width: 60px 60px 60px 60px;
+    border-style: solid;
+    margin: auto;
+}
+
+.scr7-parent-line {
+    width: 4px;
+    height: 4px;
+    background-color: #FFF;
+    position: absolute;
+    top: 80%;
+    left: 48%;
+}
+
+.scr7-con-div {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -163%;
+    left: 45.5%;
+    opacity: 0;
+}
+
+/* .scr7-child-line-cont{
+    position: absolute;
+    bottom: -140%;
+    left: 50%;
+    z-index: 100;
+}
+
+.scr7-child-line-inner-cont{
+    position: relative;
+} */
+
+.scr7-child1-line {
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -155%;
+    left: 48%;
+    opacity: 0;
+    transition: width .5s ease-in-out;
+}
+
+.scr7-child2-line {
+    width: 4px;
+    height: 4px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: -155%;
+    left: 48%;
+    opacity: 0;
+}
+
+.scr7-options {
+    transition: transform 1s;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -35%;
+    left: -48%;
+    right: -62%;
+    padding-inline: 20px;
+    opacity: 0;
+}
+
+.scr7-option1 {
+    width: 150px;
+    height: 150px;
+    color: #790078;
+    background-image: url("../assets/option_bg1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.scr7-option2 {
+    width: 150px;
+    height: 150px;
+    color: #790078;
+    background-image: url("../assets/option_bg2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
 
 
 /* Screen - 8 scr8 */
@@ -551,6 +767,7 @@ img {
 .scr8-img1 {
     transition: transform 2s;
     position: relative;
+    height: 100vh;
 }
 
 .scr8-img2 {
@@ -573,6 +790,48 @@ img {
         transform: scale(25);
     }
 }
+
+@keyframes scr8-zoomOut2 {
+    0% {
+        transform: scale(25);
+    }
+    
+    100% {
+        transform: scale(0);
+    }
+}
+
+.scr8-img3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+    transition: transform 2s;
+    opacity: 0;
+}
+
+@keyframes scr8-zoomIn3 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(25);
+    }
+}
+
+@keyframes scr8-zoomOut3 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(25);
+    }
+}
+
 
 .scr8-data {
     position: absolute;
@@ -601,6 +860,14 @@ img {
     }
 }
 
+.scr8-h1 {
+    color: #790078;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 700;
+    transition: transform 0.5s ease-in;
+}
+
 @keyframes scr8-zoomOutData {
     0% {
         opacity: 1;
@@ -609,13 +876,6 @@ img {
     100% {
         opacity: 0;
     }
-}
-
-.scr8-h1 {
-    color: #790078;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 700;
 }
 
 .scr8-h2 {
