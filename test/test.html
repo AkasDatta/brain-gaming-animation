@@ -4,14 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Quiz Tree</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
-        
+        body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.div-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: divAnimation 1s ease-in-out forwards;
+}
+
+.vertical-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background-color: #2ecc71;
+    animation: verticalLineAnimation 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    animation: circleAnimation 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+.horizontal-line {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background-color: #9b59b6;
+    animation: horizontalLineAnimation 1s ease-in-out forwards;
+}
+
+.left {
+    left: -50px;
+    animation-delay: 3s;
+}
+
+.right {
+    right: -50px;
+    animation-delay: 3s;
+}
+
+@keyframes divAnimation {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes verticalLineAnimation {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes circleAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes horizontalLineAnimation {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="div-animation">
+            <div class="vertical-line">
+                <div class="circle"></div>
+                <div class="horizontal-line left">
+                    <div class="endpoint left-endpoint"></div>
+                </div>
+                <div class="horizontal-line right">
+                    <div class="endpoint right-endpoint"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    
+    <script src="../animejs/anime.min.js"></script>
+    <script src="script.js"></script>
+
+
+    <script>
+        // Define the anime.js animations for lines
+        const line1 = anime({
+            targets: '#line1',
+            scaleX: [0, 1],
+            duration: 1000,
+            easing: 'easeOutExpo',
+            autoplay: false,
+        });
+
+        const line2 = anime({
+            targets: '#line2',
+            scaleX: [0, 1],
+            duration: 1000,
+            easing: 'easeOutExpo',
+            autoplay: false,
+        });
+
+        // Add click event listeners to options
+        const option1 = document.getElementById('option1');
+        const option2 = document.getElementById('option2');
+
+        option1.addEventListener('click', () => {
+            line1.restart();
+        });
+
+        option2.addEventListener('click', () => {
+            line2.restart();
+        });
+
+    </script>
 </body>
 
 </html>
