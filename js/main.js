@@ -693,13 +693,12 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             const scr7Child2LineStyle = screenElement.querySelector('.scr7-child2-line');
                                             scr7Child1LineStyle.style.opacity = 1;
                                             scr7Child2LineStyle.style.opacity = 1;
-                                            
+                                            // left
                                             anime({
-                                                targets: '.scr7-child1-line ',
-                                                width: '50%', // -> from '28px' to '100%',
-                                                translateX: [0, -230],
-                                                // translateX: [-50, 50],
-                                                // rotate: [0, -90],
+                                                targets: '.scr7-child1-line',
+                                                width: '100%', // -> from '28px' to '100%',
+                                                translateX: -230,
+                                                // rotate: -180,
                                                 // direction: 'reverse',
                                                 direction: 'alternate',
                                                 easing: 'easeInOutQuad',
@@ -719,7 +718,7 @@ let mGameRenderer = (data = {}, mDOM) => {
                                             const scr7Options = screenElement.querySelector('.scr7-options');
                                             setTimeout(() => {
                                                 scr7Options.style.opacity = 1;
-                                            }, 1000);
+                                            }, 400);
 
                                         }, 2000);
 
@@ -776,13 +775,12 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         const scr8Img3 = screenElement.querySelector('.scr8-img3');
 
                                         if (scr8Img2) {
-                                            scr8Img2.style.animation = 'scr8-zoomIn2 2s 2s both';
+                                            scr8Img2.style.animation = 'scr8-zoomIn2 1s 1s both';
                                         }
 
                                         if (scr8Img3) {
                                             scr8Img3.style.animation = 'scr6-zoomIn3 2s 2s both';
                                         }
-
 
                                         const scr8Data = screenElement.querySelector(".scr8-data");
                                         if (scr8Data) {
@@ -791,13 +789,16 @@ let mGameRenderer = (data = {}, mDOM) => {
 
 
                                         setTimeout(() => {
-                                            scr8Img2.style.animation = 'scr8-zoomOutData 2s 2s both';
                                             scr8H1.style.animation = 'scr8-zoomOutData 2s 2s both';
 
+                                            setTimeout(() => {
+                                                scr8Img2.style.animation = 'scr8-zoomOut2 2s 2s both';
+                                            }, 2000);
+
                                             if (scr8Img3) {
-                                                scr8Img3.style.animation = 'scr8-zoomIn2 2s 2s both';
+                                                scr8Img3.style.animation = 'scr8-zoomIn3 2s 2s both';
                                             }
-                                        }, 3000);
+                                        }, 2000);
 
 
                                     }
@@ -845,15 +846,15 @@ let mGameRenderer = (data = {}, mDOM) => {
             }
         });
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_2", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
+        // setTimeout(() => {
+        //     mDta_main.screens.set("scr_2", {
+        //         "el": mE,
+        //         "value": {
+        //             //here you can assign your variable based on your requirements..
 
-                }
-            });
-        }, 2000);
+        //         }
+        //     });
+        // }, 2000);
 
         // setTimeout(() => {
         //     mDta_main.screens.set("scr_3", {
@@ -895,26 +896,27 @@ let mGameRenderer = (data = {}, mDOM) => {
         //     });
         // }, 30000);
 
-        setTimeout(() => {
-            mDta_main.screens.set("scr_7", {
-                "el": mE,
-                "value": {
-                    //here you can assign your variable based on your requirements..
-
-                }
-            });
-            // }, 57000);
-        }, 3000);
-
         // setTimeout(() => {
-        //     mDta_main.screens.set("scr_8", {
+        //     mDta_main.screens.set("scr_7", {
         //         "el": mE,
         //         "value": {
         //             //here you can assign your variable based on your requirements..
 
         //         }
         //     });
+        //     // }, 57000);
+        // }, 3000);
+
+        setTimeout(() => {
+            mDta_main.screens.set("scr_8", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
+
+                }
+            });
         // },70000);
+        }, 5000);
 
 
     };
