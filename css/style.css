@@ -860,14 +860,6 @@ img {
     }
 }
 
-.scr8-h1 {
-    color: #790078;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 700;
-    transition: transform 0.5s ease-in;
-}
-
 @keyframes scr8-zoomOutData {
     0% {
         opacity: 1;
@@ -878,10 +870,26 @@ img {
     }
 }
 
+.scr8-h1 {
+    color: #790078;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 700;
+    transition: transform 0.5s ease-in;
+    position: absolute;
+    left: 0%;
+    top: 10%;
+}
+
 .scr8-h2 {
     color: #790078;
     text-align: center;
     font-size: 176px;
     font-weight: 700;
+    transition: transform 0.5s ease-in;
+    position: absolute;
+    left: 30%;
+    top: -10%;
+    opacity: 0;
     display: none;
 }
