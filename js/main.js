@@ -773,13 +773,10 @@ let mGameRenderer = (data = {}, mDOM) => {
                                         const scr8Img2 = screenElement.querySelector('.scr8-img2');
                                         const scr8H1 = screenElement.querySelector('.scr8-h1');
                                         const scr8Img3 = screenElement.querySelector('.scr8-img3');
+                                        const scr8H2 = screenElement.querySelector('.scr8-h2');
 
                                         if (scr8Img2) {
                                             scr8Img2.style.animation = 'scr8-zoomIn2 1s 1s both';
-                                        }
-
-                                        if (scr8Img3) {
-                                            scr8Img3.style.animation = 'scr6-zoomIn3 2s 2s both';
                                         }
 
                                         const scr8Data = screenElement.querySelector(".scr8-data");
@@ -793,12 +790,30 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                                             setTimeout(() => {
                                                 scr8Img2.style.animation = 'scr8-zoomOut2 2s 2s both';
-                                            }, 2000);
+                                            }, 1000);
 
-                                            if (scr8Img3) {
-                                                scr8Img3.style.animation = 'scr8-zoomIn3 2s 2s both';
-                                            }
+                                            setTimeout(() => {
+                                                if (scr8Img3) {
+                                                    scr8Img3.style.opacity = 1;
+                                                    scr8Img3.style.animation = 'scr8-zoomIn3 2s 2s both';
+                                                }
+
+                                                scr8H2.style.display = "block";
+                                                scr8H2.style.opacity = 1;
+                                                scr8H2.style.animation = 'scr8-zoomInData 2s 2s both';
+
+                                            }, 2000);
+                                            
                                         }, 2000);
+                                                                                    
+                                        setTimeout(() => {
+                                            scr8H2.style.animation = 'scr8-zoomOutData 2s 2s both';
+                                            scr8H2.style.opacity = 0;
+                                            
+                                            scr8Img3.style.animation = 'scr8-zoomOut3 2s 2s both';
+                                            scr8Img3.style.opacity = 0;
+
+                                        }, 4000);
 
 
                                     }
