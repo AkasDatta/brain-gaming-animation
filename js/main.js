@@ -861,66 +861,66 @@ let mGameRenderer = (data = {}, mDOM) => {
             }
         });
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_2", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_2", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        // }, 2000);
+                }
+            });
+        }, 2000);
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_3", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_3", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        // }, 3000);
+                }
+            });
+        }, 3000);
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_4", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_4", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        // }, 14000);
+                }
+            });
+        }, 14000);
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_5", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_5", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        // }, 24000);
+                }
+            });
+        }, 24000);
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_6", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_6", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        // }, 30000);
+                }
+            });
+        }, 30000);
 
-        // setTimeout(() => {
-        //     mDta_main.screens.set("scr_7", {
-        //         "el": mE,
-        //         "value": {
-        //             //here you can assign your variable based on your requirements..
+        setTimeout(() => {
+            mDta_main.screens.set("scr_7", {
+                "el": mE,
+                "value": {
+                    //here you can assign your variable based on your requirements..
 
-        //         }
-        //     });
-        //     // }, 57000);
-        // }, 3000);
+                }
+            });
+        }, 57000);
+        
 
         setTimeout(() => {
             mDta_main.screens.set("scr_8", {
@@ -930,8 +930,7 @@ let mGameRenderer = (data = {}, mDOM) => {
 
                 }
             });
-        // },70000);
-        }, 5000);
+        },70000);
 
 
     };
